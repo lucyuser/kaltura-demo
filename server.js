@@ -35,6 +35,36 @@ App.get('/', function(req, res) {
   res.redirect('home.html');
 });
 
+App.post('/likeVideo_checkLikeExists', function(req, res) {
+  Kaltura.likeVideo_checkLikeExists(req.body.entryId, function(err, result) {
+    if (err) {
+      console.log('Error:' + JSON.stringify(err));
+      res.status(401);
+      return res.end();
+    }
+    res.send(JSON.stringify(result));
+  });
+})
+App.post('/likeVideo_like', function(req, res) {
+  Kaltura.likeVideo_like(req.body.entryId, function(err, result) {
+    if (err) {
+      console.log('Error:' + JSON.stringify(err));
+      res.status(401);
+      return res.end();
+    }
+    res.send(JSON.stringify(result));
+  });
+})
+App.post('/likeVideo_unlike', function(req, res) {
+  Kaltura.likeVideo_unlike(req.body.entryId, function(err, result) {
+    if (err) {
+      console.log('Error:' + JSON.stringify(err));
+      res.status(401);
+      return res.end();
+    }
+    res.send(JSON.stringify(result));
+  });
+})
 App.post('/videosAboutKaltura_listMedia', function(req, res) {
   Kaltura.videosAboutKaltura_listMedia(function(err, result) {
     if (err) {

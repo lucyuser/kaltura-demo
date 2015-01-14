@@ -13,6 +13,30 @@ exports.initialized = function() {
   return Client.initialize ? Client.initialized() : Secrets !== null;
 }
 
+exports.likeVideo_checkLikeExists = function(entryId, callback) {
+  var params = {
+    'entryId': entryId,
+  };
+  for (var secret in Secrets) {
+    params[secret] = Secrets[secret];
+  }
+  return Client.checkLikeExists(params, callback);}
+exports.likeVideo_like = function(entryId, callback) {
+  var params = {
+    'entryId': entryId,
+  };
+  for (var secret in Secrets) {
+    params[secret] = Secrets[secret];
+  }
+  return Client.like(params, callback);}
+exports.likeVideo_unlike = function(entryId, callback) {
+  var params = {
+    'entryId': entryId,
+  };
+  for (var secret in Secrets) {
+    params[secret] = Secrets[secret];
+  }
+  return Client.unlike(params, callback);}
 exports.videosAboutKaltura_listMedia = function(callback) {
   var params = {
     'nameLike': 'Kaltura',
