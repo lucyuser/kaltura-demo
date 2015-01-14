@@ -1,0 +1,7 @@
+{
+  "name": "Kaltura API Demo",
+  "description": "A demo of the Kaltura API",
+  "repository": "https://github.com/lucyuser/kaltura-demo",
+  "logo": "http://node-js-sample.herokuapp.com/node.svg",
+  "keywords": ["node", "express", "static"]
+}
